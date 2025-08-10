@@ -28,6 +28,9 @@ type Config struct {
 	RecordEnabled          bool `json:"record_enabled" gorm:"default:true"`          // 是否启用记录功能
 	RecordPreserveTime     int  `json:"record_preserve_time" gorm:"default:720"`     // 记录保留时间，单位小时，默认30天
 	PingRecordPreserveTime int  `json:"ping_record_preserve_time" gorm:"default:24"` // Ping 记录保留时间，单位小时，默认1天
+	// 备案信息
+	IcpNumber string `json:"icp_number" gorm:"type:varchar(100);default:''"` // ICP备案号
+	PsbNumber string `json:"psb_number" gorm:"type:varchar(100);default:''"` // 公安备案号
 	CreatedAt              LocalTime
 	UpdatedAt              LocalTime
 }
